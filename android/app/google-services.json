@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "142812516375",
+    "project_id": "day-a-bin-kbk",
+    "storage_bucket": "day-a-bin-kbk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142812516375:android:4017a077b3401348360c52",
+        "android_client_info": {
+          "package_name": "com.mariuszkuczynski.day_a_bin_kbk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142812516375-d3k2lkb8959ngpg9o6mgt1i05qppp0oi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMutODkVKSJIewCIZ4DC0LyxWNCHdWfgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142812516375-d3k2lkb8959ngpg9o6mgt1i05qppp0oi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
