@@ -21,111 +21,118 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(221, 229, 237, 1),
       body: Center(
-          child: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              isCreatingAccount == true ? 'Zarejestruj się' : 'Zaloguj się',
-              style: GoogleFonts.inriaSerif(fontSize: 20),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            TextField(
-              controller: widget.emailController,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: const Color.fromRGBO(173, 198, 206, 1),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                hintText: 'Email',
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                isCreatingAccount == true ? 'Zarejestruj się' : 'Zaloguj się',
+                style: GoogleFonts.inriaSerif(fontSize: 20),
               ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            TextField(
-              controller: widget.passwordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: const Color.fromRGBO(173, 198, 206, 1),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                hintText: 'Hasło',
+              const SizedBox(
+                height: 20,
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Text(errorMessage),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  primary: const Color.fromRGBO(173, 198, 206, 1),
-                  textStyle: GoogleFonts.inriaSerif(color: Colors.black)),
-              onPressed: () async {
-                if (isCreatingAccount == true) {
-                  //rejestracja
+              TextField(
+                controller: widget.emailController,
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: const Color.fromRGBO(173, 198, 206, 1),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  hintText: 'Email',
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              TextField(
+                controller: widget.passwordController,
+                obscureText: true,
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: const Color.fromRGBO(173, 198, 206, 1),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  hintText: 'Hasło',
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(errorMessage),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: const Color.fromRGBO(173, 198, 206, 1),
+                    textStyle: GoogleFonts.inriaSerif()),
+                onPressed: () async {
+                  if (isCreatingAccount == true) {
+                    //rejestracja
+                    {
+                      try {
+                        await FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
+                                email: widget.emailController.text,
+                                password: widget.passwordController.text);
+                      } catch (error) {
+                        setState(() {
+                          errorMessage = error.toString();
+                        });
+                      }
+                    }
+                  } else
+                  //logowanie
                   {
-                  try {
-                    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                        email: widget.emailController.text,
-                        password: widget.passwordController.text);
-                  } catch (error) {
-                    setState(() {
-                      errorMessage = error.toString();
-                    });
+                    try {
+                      await FirebaseAuth.instance.signInWithEmailAndPassword(
+                          email: widget.emailController.text,
+                          password: widget.passwordController.text);
+                    } catch (error) {
+                      setState(() {
+                        errorMessage = error.toString();
+                      });
+                    }
                   }
-                }
-                } else 
-                //logowanie 
-                {
-                  try {
-                    await FirebaseAuth.instance.signInWithEmailAndPassword(
-                        email: widget.emailController.text,
-                        password: widget.passwordController.text);
-                  } catch (error) {
+                },
+                child: Text(
+                  isCreatingAccount == true ? 'Zarejestruj się' : 'Zaloguj się',
+                  style: const TextStyle(color: Colors.black),
+                ),
+              ),
+              if (isCreatingAccount == false) ...[
+                TextButton(
+                  onPressed: () {
                     setState(() {
-                      errorMessage = error.toString();
+                      isCreatingAccount = true;
                     });
-                  }
-                }
-                
-              },
-              child: Text(isCreatingAccount == true
-                  ? 'Zarejestruj się'
-                  : 'Zaloguj się'),
-            ),
-            if (isCreatingAccount == false) ...[
-              TextButton(
-                onPressed: () {
-                  setState(() {
-                    isCreatingAccount = true;
-                  });
-                },
-                child: const Text('Utwórz konto'),
-              ),
-              
+                  },
+                  child: const Text(
+                    'Rejestracja',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+              ],
+              if (isCreatingAccount == true) ...[
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      isCreatingAccount = false;
+                    });
+                  },
+                  child: const Text(
+                    'Mam juz konto',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+              ],
             ],
-            if (isCreatingAccount == true) ...[
-              TextButton(
-                onPressed: () {
-                  setState(() {
-                    isCreatingAccount = false;
-                  });
-                },
-                child: const Text('Mam juz konto'),
-              ),
-              
-            ],
-          ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }

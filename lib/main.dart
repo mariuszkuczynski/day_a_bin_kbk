@@ -40,12 +40,11 @@ class RootPage extends StatelessWidget {
         builder: (context, snapshot) {
           final user = snapshot.data;
           if (user == null) {
-            return  LoginPage();
+            return LoginPage();
           }
-          return  HomePage(user: user,);
+          return HomePage(
+            user: user,
+          );
         });
   }
 }
-
-
-
