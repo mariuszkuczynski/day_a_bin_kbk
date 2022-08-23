@@ -1,5 +1,6 @@
-import 'package:day_a_bin_kbk/app/home/home_page.dart';
-import 'package:day_a_bin_kbk/app/login/login_page.dart';
+
+import 'package:day_a_bin_kbk/app/logowanie/login_page.dart';
+import 'package:day_a_bin_kbk/app/wyszukiwanie/wyszukiwanie.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,7 @@ class RootPage extends StatelessWidget {
           if (user == null) {
             return LoginPage();
           }
-          return HomePage(
+          return  SearchPage(
             user: user,
           );
         });
