@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class InformationPage extends StatelessWidget {
   const InformationPage({
     Key? key,
@@ -9,14 +8,19 @@ class InformationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      color: const  Color.fromRGBO(221, 229, 237, 1),
-      child: Center(child: ListView(
-        children:  [
-          const SizedBox(height: 10,),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text('''
+    return Container(
+      color: const Color.fromRGBO(221, 229, 237, 1),
+      child: Center(
+        child: ListView(
+          children: [
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('''
+JAK SEGREGOWAĆ?
+
 METALE I TWORZYWA SZTUCZNE
 Należy wyrzucać:
 
@@ -111,14 +115,10 @@ Nie należy wyrzucać:
 ODPADY ZMIESZANE
 - Do pojemnika z odpadami zmieszanymi należy wrzucać wszystko to, czego nie można odzyskać w procesie recyklingu, z wyłączeniem odpadów niebezpiecznych.
 
-''',
-            style: GoogleFonts.inriaSerif(fontSize: 16)
-            ),
-          )
-        ],
-      ),
-        
-        
+''', style: GoogleFonts.inriaSerif(fontSize: 16)),
+            )
+          ],
+        ),
       ),
     );
   }

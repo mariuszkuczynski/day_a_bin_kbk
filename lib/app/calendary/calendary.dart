@@ -44,6 +44,7 @@ class CategoryWidget extends StatelessWidget {
           style: GoogleFonts.inriaSerif(
             fontSize: 20,
             fontWeight: FontWeight.bold,
+            color: Colors.black
           ),
         ),
         style: ElevatedButton.styleFrom(

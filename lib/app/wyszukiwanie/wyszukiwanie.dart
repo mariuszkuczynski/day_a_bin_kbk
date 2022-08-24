@@ -1,5 +1,5 @@
 
-import 'package:day_a_bin_kbk/app/ustawienia/home_page.dart';
+import 'package:day_a_bin_kbk/app/ustawienia/seting_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

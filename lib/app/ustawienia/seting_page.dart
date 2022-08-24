@@ -4,15 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../calendary/calendary.dart';
 
-
-
 class HomePage extends StatefulWidget {
   const HomePage({
     Key? key,
-    
   }) : super(key: key);
-
-  
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -24,25 +19,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( title: Builder(
-        
-        builder: (context) {
-           if (currentIndex == 1) {
-            
+      backgroundColor: const Color.fromRGBO(221, 229, 237, 1),
+      appBar: AppBar(
+        title: Builder(builder: (context) {
+          if (currentIndex == 1) {
             return Center(
-              
-              
               child: Text(
                 'PSZOK',
                 style: GoogleFonts.inriaSerif(
                   fontSize: 30,
-                  
                   letterSpacing: 10,
+                  color: Colors.black
                 ),
               ),
             );
           }
-          
+
           if (currentIndex == 2) {
             return Center(
               child: Text(
@@ -51,6 +43,7 @@ class _HomePageState extends State<HomePage> {
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 10,
+                  color: Colors.black,
                 ),
               ),
             );
@@ -63,6 +56,7 @@ class _HomePageState extends State<HomePage> {
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 10,
+                  color: Colors.black,
                 ),
               ),
             );
@@ -74,15 +68,16 @@ class _HomePageState extends State<HomePage> {
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 10,
+                color: Colors.black,
               ),
             ),
           );
-        }
-        
-      ),backgroundColor: const Color.fromRGBO(173, 198, 206, 1),),
+        }),
+        backgroundColor: const Color.fromRGBO(173, 198, 206, 1),
+      ),
       body: Builder(builder: (context) {
         if (currentIndex == 0) {
-          return  const CalendaryPage();
+          return const CalendaryPage();
         }
 
         if (currentIndex == 1) {
@@ -94,16 +89,12 @@ class _HomePageState extends State<HomePage> {
         }
 
         return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: ListView(
             children: const [
-              Text  (
-                'Ustawienia'
-              ),
-               SizedBox(
-                height: 20,
-              ),
-              
+              WidgetButton('Zmiana Ulicy'),
+              WidgetButton('Powiadomienia'),
+              WidgetButton('Kontakt'),
+              WidgetButton('O Aplikacji'),
             ],
           ),
         );
@@ -124,8 +115,10 @@ class _HomePageState extends State<HomePage> {
                 backgroundColor: Color.fromRGBO(173, 198, 206, 1),
                 label: 'Terminarz'),
             BottomNavigationBarItem(
-              icon: Icon(Icons.delete),
-              label: 'PSZOK'),
+                icon: Icon(
+                  Icons.delete,
+                ),
+                label: 'PSZOK'),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.info_outline,
@@ -141,7 +134,35 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+class WidgetButton extends StatelessWidget {
+  const WidgetButton(
+    this.title, {
+    Key? key,
+  }) : super(key: key);
 
+  final String title;
 
-
-
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+      child: ElevatedButton(
+        
+        onPressed: () {},
+        child: Text(
+          title,
+          style: GoogleFonts.inriaSerif(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          primary: const Color.fromRGBO(173, 198, 206, 1),
+          padding: const EdgeInsets.all(18),
+          
+        ),
+      ),
+    );
+  }
+}

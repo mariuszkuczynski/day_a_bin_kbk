@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Text(
                 isCreatingAccount == true ? 'Zarejestruj się' : 'Zaloguj się',
-                style: GoogleFonts.inriaSerif(fontSize: 20),
+                style: GoogleFonts.inriaSerif(fontSize: 20,fontWeight: FontWeight.bold,),
               ),
               const SizedBox(
                 height: 20,
