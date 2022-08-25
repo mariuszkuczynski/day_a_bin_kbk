@@ -12,7 +12,7 @@ class CalendaryPage extends StatelessWidget {
       color: const Color.fromRGBO(221, 229, 237, 1),
       child: Center(
         child: ListView(
-          children: const [
+          children: [
             CategoryWidget('Zmieszane'),
             CategoryWidget('Segregowane'),
             CategoryWidget('BIO'),
@@ -26,12 +26,14 @@ class CalendaryPage extends StatelessWidget {
 }
 
 class CategoryWidget extends StatelessWidget {
-  const CategoryWidget(
+   CategoryWidget(
     this.title, {
     Key? key,
   }) : super(key: key);
 
   final String title;
+  final shape =   RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(32),);
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +52,7 @@ class CategoryWidget extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           primary: const Color.fromRGBO(173, 198, 206, 1),
           padding: const EdgeInsets.all(18),
+          shape: shape,
         ),
       ),
     );

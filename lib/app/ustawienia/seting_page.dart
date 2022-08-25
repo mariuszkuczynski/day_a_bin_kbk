@@ -1,5 +1,9 @@
 import 'package:day_a_bin_kbk/app/informacje/information_page.dart';
 import 'package:day_a_bin_kbk/app/pszok/pszok_page.dart';
+import 'package:day_a_bin_kbk/app/ustawienia/kontakt/contact.dart';
+import 'package:day_a_bin_kbk/app/ustawienia/o_aplikacji/aplication.dart';
+import 'package:day_a_bin_kbk/app/ustawienia/powiadomienia/notification.dart';
+import 'package:day_a_bin_kbk/app/ustawienia/zmiana_ulicy/new_street.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../calendary/calendary.dart';
@@ -15,6 +19,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var currentIndex = 0;
+  final shape = RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(32),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +34,7 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 'PSZOK',
                 style: GoogleFonts.inriaSerif(
-                  fontSize: 30,
-                  letterSpacing: 10,
-                  color: Colors.black
-                ),
+                    fontSize: 30, letterSpacing: 10, color: Colors.black),
               ),
             );
           }
@@ -89,13 +93,101 @@ class _HomePageState extends State<HomePage> {
         }
 
         return Center(
-          child: ListView(
-            children: const [
-              WidgetButton('Zmiana Ulicy'),
-              WidgetButton('Powiadomienia'),
-              WidgetButton('Kontakt'),
-              WidgetButton('O Aplikacji'),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            child: ListView(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const NewStreetPage(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Zmiana ulicy',
+                    style: GoogleFonts.inriaSerif(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color.fromRGBO(173, 198, 206, 1),
+                    padding: const EdgeInsets.all(18),
+                    shape: shape,
+                  ),
+                ),
+                const SizedBox(height: 15),
+                
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const NotificationPage(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Powiadomienia',
+                    style: GoogleFonts.inriaSerif(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color.fromRGBO(173, 198, 206, 1),
+                    padding: const EdgeInsets.all(18),
+                    shape: shape,
+                  ),
+                  
+                ),
+                const SizedBox(height: 15),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const ContactPage(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Kontakt',
+                    style: GoogleFonts.inriaSerif(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color.fromRGBO(173, 198, 206, 1),
+                    padding: const EdgeInsets.all(18),
+                    shape: shape,
+                  ),
+                ),
+                const SizedBox(height: 15),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const AplicationPage(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'O Aplikacji',
+                    style: GoogleFonts.inriaSerif(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color.fromRGBO(173, 198, 206, 1),
+                    padding: const EdgeInsets.all(18),
+                    shape: shape,
+                  ),
+                ),
+              ],
+            ),
           ),
         );
       }),
@@ -130,39 +222,6 @@ class _HomePageState extends State<HomePage> {
                 ),
                 label: 'Ustawienia'),
           ]),
-    );
-  }
-}
-
-class WidgetButton extends StatelessWidget {
-  const WidgetButton(
-    this.title, {
-    Key? key,
-  }) : super(key: key);
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-      child: ElevatedButton(
-        
-        onPressed: () {},
-        child: Text(
-          title,
-          style: GoogleFonts.inriaSerif(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black
-          ),
-        ),
-        style: ElevatedButton.styleFrom(
-          primary: const Color.fromRGBO(173, 198, 206, 1),
-          padding: const EdgeInsets.all(18),
-          
-        ),
-      ),
     );
   }
 }
