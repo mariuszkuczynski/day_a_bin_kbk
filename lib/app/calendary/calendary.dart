@@ -1,6 +1,11 @@
-import 'package:day_a_bin_kbk/app/wyszukiwanie/pages/zmieszane/zmieszane_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'pages/bio/bio.dart';
+import 'pages/choinki/choinki.dart';
+import 'pages/gabaryty/gabaryty.dart';
+import 'pages/segregowane/segregowane.dart';
+import 'pages/zmieszane/zmieszane_page.dart';
 
 class CalendaryPage extends StatelessWidget {
   CalendaryPage({
@@ -45,7 +50,7 @@ class CalendaryPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => const ZmieszanePage()),
+                    MaterialPageRoute(builder: (_) => const SegregowanePage()),
                   );
                 },
                 child: Text(
@@ -67,7 +72,7 @@ class CalendaryPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => const ZmieszanePage()),
+                    MaterialPageRoute(builder: (_) => const BioPage()),
                   );
                 },
                 child: Text(
@@ -89,7 +94,7 @@ class CalendaryPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => const ZmieszanePage()),
+                    MaterialPageRoute(builder: (_) => const GabarytyPage()),
                   );
                 },
                 child: Text(
@@ -111,7 +116,7 @@ class CalendaryPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => const ZmieszanePage()),
+                    MaterialPageRoute(builder: (_) => const ChoinkiPage()),
                   );
                 },
                 child: Text(
