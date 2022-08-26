@@ -1,58 +1,134 @@
+import 'package:day_a_bin_kbk/app/wyszukiwanie/pages/zmieszane/zmieszane_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CalendaryPage extends StatelessWidget {
-  const CalendaryPage({
+  CalendaryPage({
     Key? key,
   }) : super(key: key);
+
+  final shape = RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(32),
+  );
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: const Color.fromRGBO(221, 229, 237, 1),
       child: Center(
-        child: ListView(
-          children: [
-            CategoryWidget('Zmieszane'),
-            CategoryWidget('Segregowane'),
-            CategoryWidget('BIO'),
-            CategoryWidget('Gabaryty'),
-            CategoryWidget('Choinki'),
-          ],
-        ),
-      ),
-    );
-  }
-}
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+          child: ListView(
+            children: [
+              //ZMIESZANE
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const ZmieszanePage()),
+                  );
+                },
+                child: Text(
+                  'Zmieszane',
+                  style: GoogleFonts.inriaSerif(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: const Color.fromRGBO(173, 198, 206, 1),
+                  padding: const EdgeInsets.all(18),
+                  shape: shape,
+                ),
+              ),
+              const SizedBox(height: 15),
+              //SEGREGOWANE
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const ZmieszanePage()),
+                  );
+                },
+                child: Text(
+                  'Segregowane',
+                  style: GoogleFonts.inriaSerif(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: const Color.fromRGBO(173, 198, 206, 1),
+                  padding: const EdgeInsets.all(18),
+                  shape: shape,
+                ),
+              ),
+              const SizedBox(height: 15),
 
-class CategoryWidget extends StatelessWidget {
-   CategoryWidget(
-    this.title, {
-    Key? key,
-  }) : super(key: key);
+              //BIO
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const ZmieszanePage()),
+                  );
+                },
+                child: Text(
+                  'BIO',
+                  style: GoogleFonts.inriaSerif(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: const Color.fromRGBO(173, 198, 206, 1),
+                  padding: const EdgeInsets.all(18),
+                  shape: shape,
+                ),
+              ),
+              const SizedBox(height: 15),
 
-  final String title;
-  final shape =   RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(32),);
+              //GABARYTY
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const ZmieszanePage()),
+                  );
+                },
+                child: Text(
+                  'Gabaryty',
+                  style: GoogleFonts.inriaSerif(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: const Color.fromRGBO(173, 198, 206, 1),
+                  padding: const EdgeInsets.all(18),
+                  shape: shape,
+                ),
+              ),
+              const SizedBox(height: 15),
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-      child: ElevatedButton(
-        onPressed: () {},
-        child: Text(
-          title,
-          style: GoogleFonts.inriaSerif(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black
+              //CHOINKI
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const ZmieszanePage()),
+                  );
+                },
+                child: Text(
+                  'Choinki',
+                  style: GoogleFonts.inriaSerif(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: const Color.fromRGBO(173, 198, 206, 1),
+                  padding: const EdgeInsets.all(18),
+                  shape: shape,
+                ),
+              ),
+            ],
           ),
-        ),
-        style: ElevatedButton.styleFrom(
-          primary: const Color.fromRGBO(173, 198, 206, 1),
-          padding: const EdgeInsets.all(18),
-          shape: shape,
         ),
       ),
     );
