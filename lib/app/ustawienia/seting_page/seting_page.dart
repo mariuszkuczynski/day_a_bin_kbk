@@ -6,18 +6,18 @@ import 'package:day_a_bin_kbk/app/ustawienia/powiadomienia/notification.dart';
 import 'package:day_a_bin_kbk/app/ustawienia/zmiana_ulicy/new_street.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../calendary/calendary.dart';
+import '../../calendary/calendary_page/calendary.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({
+class SetingPage extends StatefulWidget {
+  const SetingPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<SetingPage> createState() => _SetingPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SetingPageState extends State<SetingPage> {
   var currentIndex = 0;
   final shape = RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(32),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../seting_page.dart';
+import '../seting_page/seting_page.dart';
 
 class NewStreetPage extends StatelessWidget {
   const NewStreetPage({Key? key}) : super(key: key);
@@ -47,7 +46,7 @@ class NewStreetPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) => const HomePage(),
+                      builder: (_) => const SetingPage(),
                     ),
                   );
                 },

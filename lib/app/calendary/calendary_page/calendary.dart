@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'pages/bio/bio.dart';
-import 'pages/choinki/choinki.dart';
-import 'pages/gabaryty/gabaryty.dart';
-import 'pages/segregowane/segregowane.dart';
-import 'pages/zmieszane/zmieszane_page.dart';
+import '../pages/bio/bio.dart';
+import '../pages/choinki/choinki.dart';
+import '../pages/gabaryty/gabaryty.dart';
+import '../pages/segregowane/segregowane.dart';
+import '../pages/zmieszane/zmieszane_page.dart';
 
 class CalendaryPage extends StatelessWidget {
   CalendaryPage({
