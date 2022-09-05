@@ -1,10 +1,7 @@
-
-import 'package:day_a_bin_kbk/app/logowanie/login_page.dart';
-import 'package:day_a_bin_kbk/app/wyszukiwanie/wyszukiwanie.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'app/Root_page/root.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,30 +19,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'day a bin kbk',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: const RootPage(),
     );
-  }
-}
-
-class RootPage extends StatelessWidget {
-  const RootPage({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder<User?>(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context, snapshot) {
-          final user = snapshot.data;
-          if (user == null) {
-            return LoginPage();
-          }
-          return  SearchPage(
-            user: user,
-          );
-        });
   }
 }

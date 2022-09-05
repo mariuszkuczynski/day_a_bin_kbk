@@ -81,7 +81,7 @@ class _SetingPageState extends State<SetingPage> {
       ),
       body: Builder(builder: (context) {
         if (currentIndex == 0) {
-          return  CalendaryPage();
+          return CalendaryPage();
         }
 
         if (currentIndex == 1) {
@@ -119,7 +119,6 @@ class _SetingPageState extends State<SetingPage> {
                   ),
                 ),
                 const SizedBox(height: 15),
-                
                 ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(
@@ -140,7 +139,6 @@ class _SetingPageState extends State<SetingPage> {
                     padding: const EdgeInsets.all(18),
                     shape: shape,
                   ),
-                  
                 ),
                 const SizedBox(height: 15),
                 ElevatedButton(
@@ -193,7 +191,8 @@ class _SetingPageState extends State<SetingPage> {
       }),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentIndex,
-          showUnselectedLabels: false,
+          showUnselectedLabels: true,
+          type: BottomNavigationBarType.fixed,
           onTap: (newIndex) {
             setState(() {
               currentIndex = newIndex;
