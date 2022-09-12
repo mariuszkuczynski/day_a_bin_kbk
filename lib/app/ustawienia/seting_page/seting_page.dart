@@ -113,7 +113,7 @@ class _SetingPageState extends State<SetingPage> {
                         color: Colors.black),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: const Color.fromRGBO(173, 198, 206, 1),
+                    backgroundColor: const Color.fromRGBO(173, 198, 206, 1),
                     padding: const EdgeInsets.all(18),
                     shape: shape,
                   ),
@@ -135,7 +135,7 @@ class _SetingPageState extends State<SetingPage> {
                         color: Colors.black),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: const Color.fromRGBO(173, 198, 206, 1),
+                    backgroundColor: const Color.fromRGBO(173, 198, 206, 1),
                     padding: const EdgeInsets.all(18),
                     shape: shape,
                   ),
@@ -157,7 +157,7 @@ class _SetingPageState extends State<SetingPage> {
                         color: Colors.black),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: const Color.fromRGBO(173, 198, 206, 1),
+                    backgroundColor: const Color.fromRGBO(173, 198, 206, 1),
                     padding: const EdgeInsets.all(18),
                     shape: shape,
                   ),
@@ -179,7 +179,7 @@ class _SetingPageState extends State<SetingPage> {
                         color: Colors.black),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: const Color.fromRGBO(173, 198, 206, 1),
+                    backgroundColor: const Color.fromRGBO(173, 198, 206, 1),
                     padding: const EdgeInsets.all(18),
                     shape: shape,
                   ),

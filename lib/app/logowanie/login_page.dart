@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                 Text(errorMessage),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: const Color.fromRGBO(173, 198, 206, 1),
+                      backgroundColor: const Color.fromRGBO(173, 198, 206, 1),
                       textStyle: GoogleFonts.inriaSerif()),
                   onPressed: () async {
                     if (isCreatingAccount == true) {

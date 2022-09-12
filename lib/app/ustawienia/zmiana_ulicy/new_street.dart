@@ -41,7 +41,7 @@ class NewStreetPage extends StatelessWidget {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    primary: const Color.fromRGBO(173, 198, 206, 1),
+                    backgroundColor: const Color.fromRGBO(173, 198, 206, 1),
                     textStyle: GoogleFonts.inriaSerif()),
                 onPressed: () {
                   Navigator.of(context).push(
